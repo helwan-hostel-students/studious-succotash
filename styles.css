@@ -1,0 +1,139 @@
+body {
+    font-family: Traditional Arabic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+summary {
+    font-weight: bold;
+}
+
+.main-summary {
+    font-size: 35px;
+    list-style: none;
+    text-align: center;
+}
+
+.main-summary::after {
+    content: ' (التفاصيل)';
+    color: #007bff;
+    cursor: pointer;
+}
+
+.categories {
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.note {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: Traditional Arabic;
+    text-align: right;
+}
+
+.search-results {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    right: 10%;
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+    font-size: 20px;
+    font-family: Traditional Arabic;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+.search-result-item.active {
+    background-color: #e6e6e6;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+.highlight-question {
+    position: relative;
+    z-index: 999;
+    animation: highlightPulse 2s ease-out;
+}
+
+@keyframes highlightPulse {
+    0% {
+        background-color: #fff7d1;
+        box-shadow: 0 0 20px rgba(255, 247, 209, 0.8);
+    }
+
+    70% {
+        background-color: #fff7d1;
+        box-shadow: 0 0 20px rgba(255, 247, 209, 0.8);
+    }
+
+    100% {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
